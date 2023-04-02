@@ -90,7 +90,7 @@ You may need to add additional files in the `lib` folder for handling user input
 
 * [Scalable Vector Graphics (SVG)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
 
-* [SVG tutorial](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial)
+* [SVG tutorial](https://developer.mozilla .org/en-US/docs/Web/SVG/Tutorial)
 
 * [Basic SVG shapes](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes)
 
