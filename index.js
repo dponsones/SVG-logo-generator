@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const shapes = require('shapes.js');
+const generateShapes = require('./lib/generateShapes')
+
 
 const questions = [
   {
