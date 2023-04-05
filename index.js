@@ -1,7 +1,22 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const generateShapes = require('./lib/generateShapes')
+const {Shape,Circle, Triangle, Square} = require('./lib/shapes');
 
+class Svg {
+  constructor(){
+    this.textElement =''
+    this.shapeElement =''
+  }
+  render(){
+    return `version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"`
+  }
+  setText(text,color){
+    this.textElement= ` <text x="150" y="125" font-size="60" text-anchor="middle" fill=${color}>${text}</text>`
+  }
+  setShapeElement(shape){
+    this.shapeElement = shape.render()
+  }
+}
 
 const questions = [
   {
@@ -33,8 +48,28 @@ const questions = [
 
 function writeToFile(fileName, data) {
   const folderPath = './examples/'
-  const shapeContent = generateShapes(data);
-  fs.writeFile(folderPath + fileName, shapeContent, (err) => {
+  const svg = new Svg();
+  svg.setText(data.text, data.textColor);
+  
+  switch (data.shape) {
+    case 'circle':
+      svg.setShapeElement(new Circle(data.shapeColor));
+      break;
+    case 'triangle':
+      svg.setShapeElement(new Triangle(data.shapeColor));
+      break;
+    case 'square':
+      svg.setShapeElement(new Square(data.shapeColor));
+      break;
+    default:
+      console.error(`Invalid shape selected: ${data.shape}`);
+      return;
+  }
+  
+  const svgContent = `<svg ${svg.render()}>${svg.shapeElement}${svg.textElement}</svg>`;
+
+  
+  fs.writeFile(folderPath + fileName, svgContent, (err) => {
     if (err) {
       console.log(err);
     } else {
