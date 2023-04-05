@@ -1,6 +1,5 @@
-# 10 Object-oriented Programming: SVG Logo Maker
 
-## Your Task
+## Task
 
 Your task is to build a Node.js command-line application that takes in user input to generate a logo and save it as an [SVG file](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics). The application prompts the user to select a color and shape, provide text for the logo, and save the generated SVG to a `.svg` file.
 
@@ -42,9 +41,9 @@ node index.js
 
 ## Links
 
-https://drive.google.com/file/d/1Nm0tjBfxS5iXoj6IEL5HgiHb3A2_LqjC/view?usp=sharing
+https://drive.google.com/file/d/1Nm0tjBfxS5iXoj6IEL5HgiHb3A2_LqjC/view?usp=sharing: Video on usage of App
 
-
+https://github.com/dponsones/SVG-logo-generator.git
 
 
 
